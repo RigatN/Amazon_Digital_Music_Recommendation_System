@@ -2,7 +2,7 @@
 # Steam Games Recommendation System
 
 
-# ![amazon](https://github.com/RigatN/Amazon_Digital_Music_Recommendation_System/main/Images/cover.PNG)
+# ![amazon](https://github.com/RigatN/Amazon_Digital_Music_Recommendation_System/blob/main/Images/cover.PNG)
 
 ## Overview
 
@@ -23,46 +23,35 @@ Given that the rating distribution is not normal, it could influence our recomme
 
 
 # Modeling and Evaluation
-We are building a Collaboritive Recommendation System with a python package called `surprise` here is a [link](https://surprise.readthedocs.io/en/stable/) to the documentation. So we started with a baseline model using `Normal Predictor` which we will use to compare results to our optimized final model. Through an iterative process we tried a few different models within the surprise library such as `SVD`, `KNNWithMeans`, and `SVD++`. The metrics we used with cross validation to evaluate our models is RMSE (root mean squared error) and MAE (mean absolute error).
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-# ![EDA](https://github.com/pyamin1878/Steam-Games-Rec-System/blob/main/Images/EDA.PNG)
-=======
-#### Normal Predictor 
-![Alt text](Images/Normal_Predictor_Results.png)
->>>>>>> main
-=======
+We are constructing a Collaborative Recommendation System utilizing the Python package "surprise". Our initial step involved establishing a baseline model using the "Normal Predictor", which serves as a benchmark for comparison with our optimized final model. Through an iterative approach, we experimented with various models available in the surprise library, including "SVD" and "SVD++". To assess the performance of these models, we employed cross-validation techniques and evaluated metrics such as RMSE (Root Mean Squared Error) and MAE (Mean Absolute Error).
 
 
 #### Normal Predictor 
-![Alt text](Images/Normal_Predictor_Results.png)
-
->>>>>>> main
-
-#### SVD
-![Alt text](Images/SVD_Results.png)
-
-#### KNNWithMeans
-![Alt text](Images/KNNWithMeans_Results.png)
-
-### SVD++ 
-
-#### Final Optimized Model
-
-We used `GridSearchCV` to optimize our final model SVD++ which had the best performance and lowest RMSE and MAE on the testset. Hyperparameters as well as the best RMSE score are provided. 
-
-![Alt text](Images/SDVpp_Results.png)
+![Alt text](Images/NP.PNG)
 
 
+
+#### SVD_basic
+![Alt text](Images/SVD_basic.PNG)
+
+
+
+#### SVD_2
+![Alt text](Images/SVD_2.PNG)
+
+#### SVD_3
+![Alt text](Images/SVD_3.PNG)
+
+### SVDpp_basic
+![Alt text](Images/SVD_3.PNG)
+
+#### SVDPP_2
+![Alt text](Images/SVDpp_2.PNG)
 
 
 ## Next Step
 
-In the next phase of the project, users will have the opportunity to input their unique user_id through API calls, enabling the system to provide personalized game recommendations tailored to their gaming preferences. This interactive feature enhances the user experience by delivering targeted suggestions based on individual gaming histories. By leveraging API functionality, the recommendation system ensures a dynamic and user-centric approach, fostering greater engagement and satisfaction within the gaming community.
-
-Stable Deployment for our model with hf spaces or a full web application.
-
+The next steps in developing the collaborative filtering recommendation system for Amazon digital music involve further refinement and optimization of the models. This includes experimenting with additional algorithms available in the surprise library, such as neighborhood-based methods or ensemble techniques, to identify the most effective approach for generating accurate recommendations. Additionally, feature engineering and data preprocessing techniques may be explored to enhance the quality of the input data. Furthermore, fine-tuning hyperparameters and conducting more extensive evaluations using different performance metrics will help to validate the robustness and effectiveness of the recommendation system.
 
 
 ## Repo Structure
@@ -70,13 +59,12 @@ Stable Deployment for our model with hf spaces or a full web application.
 ```
 ├── Images
 ├── data
-├── notebooks
 ├── .gitignore
 ├── License
 ├── README.md
-├── Recommendation_System.ipynb -------------> Final Notebook
-├── svdpp_model.pkl ---------------->          Final Model
-```
-## Citations
+├── Data_Cleaning.ipynb 
+├── Recommendation_System.ipynb 
+├── content_based.ipynb 
+├── SVD3.pkl ---------------->          Final Model
 
-[Kaggle Notebook](https://www.kaggle.com/code/simonprevoteaux/steam-game-analysis/notebook)
+```
