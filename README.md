@@ -1,46 +1,26 @@
 
 # Steam Games Recommendation System
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-# ![Game](https://github.com/RigatN/Amazon_Digital_Music_Recommendation_System/main/Images/cover.PNG)
-=======
-# ![Alt text](Images/Steam_Game.PNG)
->>>>>>> main
-=======
 
-# ![Alt text](Images/Steam_Game.PNG)
-
->>>>>>> main
+# ![amazon](https://github.com/RigatN/Amazon_Digital_Music_Recommendation_System/main/Images/cover.PNG)
 
 ## Overview
 
-The Steam Game Recommendation System transforms the gaming experience on Steam by utilizing algorithms to analyze user behavior and preferences. Through personalized game recommendations based on collaborative filtering and historical data, the system enhances game discoverability, deepening the connection between users and Steam's extensive game library. This approach not only boosts user satisfaction and engagement but also strategically contributes to revenue growth through targeted recommendations and increased game sales. The system stands as a pioneering force in delivering a tailored and immersive gaming journey, ensuring users find their perfect match in Steam's diverse game catalog.
+In this project, I aim to develop a collaborative filtering recommendation system tailored for Amazon digital music. By leveraging user interactions with music items, such as ratings or purchase histories, the system will analyze patterns and similarities among users and items to generate personalized music recommendations. The project will involve preprocessing the Amazon digital music dataset, training various collaborative filtering models, and evaluating their performance using metrics such as accuracy and coverage. Ultimately, the goal is to deploy a robust recommendation system that enhances the user experience by providing relevant and personalized music suggestions based on their preferences and behaviors.
 
 
 ## Business Understanding
 
-IThe Steam Game Recommendation System aims to enhance user engagement and satisfaction on the Steam gaming platform. By leveraging collaborative filtering techniques, user preferences, and historical gameplay data, the system seeks to provide personalized game recommendations tailored to each user's unique gaming preferences. The primary business goal is to increase game discoverability, leading to higher user retention and increased revenue through game sales. Additionally, the recommendation system contributes to creating a more immersive and enjoyable gaming experience for Steam users by connecting them with titles that align with their interests and gaming habits. Overall, the system aims to foster a stronger connection between gamers and the diverse range of games available on the Steam platform.
+In the realm of digital music, enhancing user engagement and satisfaction is paramount for online platforms like Amazon. By implementing a collaborative filtering recommendation system, Amazon aims to provide users with personalized music recommendations that resonate with their tastes and preferences. This not only fosters a more enjoyable user experience but also increases user retention and loyalty. Additionally, by surfacing relevant music content, Amazon can potentially boost sales and revenue through increased music streaming or purchases. Understanding user preferences and behavior through collaborative filtering enables Amazon to tailor its offerings and marketing strategies, ultimately leading to a more successful and customer-centric digital music platform.
 
 ## Data Understanding and Preprocessing
-![Alt text](Images/Data_points.PNG)
 
-The dataset, sourced from Kaggle [Steam Video Games](https://www.kaggle.com/datasets/tamber/steam-video-games/data) with 200k steam user interactions. Between users and how they purchase and play games we end up subsetting the data so that we drop all purchases from the columns and only use games that have been played. After cleaning and and removing ouliers we ended up with 2,569 unique `Games` and 10,271 unique `user_id`.
+The dataset, was pulled from a compiled dataset of Amazon.The data set can be found in [here](https://nijianmo.github.io/amazon/index.html).The data contains two zipped JSON files: the review and metadata. Due to the large size of the data, GitHub couldn't allow me to upload it here, but it can be found on the link I provided above.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-# ![Data_points](https://github.com/pyamin1878/Steam-Games-Rec-System/blob/main/Images/Data_points.PNG)
-=======
->>>>>>> main
-=======
+Given that the rating distribution is not normal, it could influence our recommendation system model. Hence, we'll generate a new normalized rating column by subtracting the average rating of each reviewID from the original rating.
 
->>>>>>> main
+# ![review](https://github.com/RigatN/Amazon_Digital_Music_Recommendation_System/blob/main/Images/distribution_of_rating.png)
 
-
-
-| ![Hours played](Images/EDA.PNG) |
-| :--: |
-| *Plot here is adopted from a Kaggle notebook* 
 
 # Modeling and Evaluation
 We are building a Collaboritive Recommendation System with a python package called `surprise` here is a [link](https://surprise.readthedocs.io/en/stable/) to the documentation. So we started with a baseline model using `Normal Predictor` which we will use to compare results to our optimized final model. Through an iterative process we tried a few different models within the surprise library such as `SVD`, `KNNWithMeans`, and `SVD++`. The metrics we used with cross validation to evaluate our models is RMSE (root mean squared error) and MAE (mean absolute error).
@@ -75,43 +55,6 @@ We used `GridSearchCV` to optimize our final model SVD++ which had the best perf
 ![Alt text](Images/SDVpp_Results.png)
 
 
-# Demo 
-![Alt text](Images/demo.PNG)
-We built a demo with [Gradio](https://www.gradio.app/) a python package that lets you deploy your machine learning model without any need to write front end code like JS, HTML, or CSS. 
-
-Gradio can be installed with `pip`:
-
-`pip install gradio`
-
-Starter code to run gradio interface straight from your notebook or python script:
-
-```python
-import gradio as gr
-
-def greet(name):
-    return "Hello " + name + "!"
-
-demo = gr.Interface(
-    fn=greet, 
-    inputs="text", 
-    outputs="text")
-
-demo.launch()
-```
-
-
-
-Here is the [link](https://2aee7fc06c1f03a3f1.gradio.live/) for our web application to demonstrate 5 top recommendations from our pickled model. You just need to input the `user_id`
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-# ![demo](https://github.com/pyamin1878/Steam-Games-Rec-System/blob/main/Images/demo.PNG)
-=======
->>>>>>> main
-=======
-
->>>>>>> main
 
 
 ## Next Step
