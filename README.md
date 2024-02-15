@@ -104,8 +104,10 @@ The next steps in developing the collaborative filtering recommendation system f
 ## Repo Structure
 
 ```
+
+├── Data
 ├── Images
-├── data
+├── Notebooks
 ├── .gitignore
 ├── License
 ├── README.md
