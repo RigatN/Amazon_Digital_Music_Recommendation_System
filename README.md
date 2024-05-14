@@ -1,5 +1,5 @@
 
-# Steam Games Recommendation System
+# Amazon Digital Music Recommendation System
 
 
 # ![amazon](https://github.com/RigatN/Amazon_Digital_Music_Recommendation_System/blob/main/Images/cover.PNG)
